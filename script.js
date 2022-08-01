@@ -23,7 +23,10 @@
 
 'use strict';
 
-const numberOfFilms = prompt('How many movies have you watched already?');
+let numberOfFilms = +prompt('How many movies have you watched already?');
+// let a = prompt('Last watched film: ');
+// let b = prompt('Rate the film from 1 to 10: ');
+
 const personalMovieDB = {
   count: numberOfFilms,
   movies: {},
@@ -32,10 +35,51 @@ const personalMovieDB = {
   privat: false
 };
 
-const a = prompt('Last watched film: ');
-const b = prompt('Rate the film from 1 to 10: ');
-const c = prompt('Last watched film: ');
-const d = prompt('Rate the film from 1 to 10: ');
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
-console.log(personalMovieDB);
+// for (let i = 0; i < 2; i++) {
+//   let a = prompt('Last watched film: ');
+//   let b = prompt('Rate the film from 1 to 10: ');
+//   if (
+//     a != null &&
+//     b != null &&
+//     a != '' &&
+//     b != '' &&
+//     a.length < 50 &&
+//     b.length < 50
+//   ) {
+//     personalMovieDB.movies[a] = b;
+//     console.log(1);
+//   } else {
+//     console.log('error');
+//     i--;
+//   }
+// }
+// if (personalMovieDB.count < 10) {
+//   console.log('You are a regular watcher');
+// } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//   console.log('You are a cinema fan');
+// } else {
+//   console.log('error');
+// }
+// console.log(personalMovieDB);
+
+let i = 0;
+while (i < 2) {
+  let a = prompt('Last watched film: ');
+  let b = prompt('Rate the film from 1 to 10: ');
+
+  if (
+    a != null &&
+    b != null &&
+    a.length < 50 &&
+    b.length < 50 &&
+    a != '' &&
+    b != ''
+  ) {
+    personalMovieDB.movies[a] = b;
+    console.log('success');
+  } else {
+    i--;
+    console.log('failure');
+  }
+  i++;
+}
